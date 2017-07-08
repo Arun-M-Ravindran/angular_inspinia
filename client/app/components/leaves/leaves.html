@@ -1,0 +1,84 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h3><strong>Leaves</strong></h3>
+      <ol class="breadcrumb">
+        <li>
+          <a href="index.html">Apply for leave: Choose leave type</a>
+        </li>
+      </ol>
+      <div class="row m-t-sm">
+        <div class="col-lg-2" ng-click="$ctrl.tab = 'casual'">
+          <button type="button" class="btn btn-primary" style="width:100%"><strong>Casual Leave</strong></button>
+        </div>
+        <div class="col-lg-2" ng-click="$ctrl.tab = 'loss'" style="margin-left:-2em;">
+          <button type="button" class="btn btn-primary" style="width:100%"><strong>Loss of Pay</strong></button>
+        </div>
+        <div class="col-lg-2" ng-click="$ctrl.tab = 'sick'" style="margin-left:-2em;">
+          <button type="button" class="btn btn-primary" style="width:100%"><strong>Sick Leave</strong></button>
+        </div>
+      </div>
+  </div>
+</div>
+<div ng-init="$ctrl.tab = 'casual'" ng-switch="$ctrl.tab">
+
+  <div ng-switch-when="casual">
+    {{$ctrl.leaves}}
+    <div class="row">
+      <div class="col-md-3">
+        <datepicker date-format="dd-MM-yyyy" selector="form-control" button-prev="<i class='fa fa-arrow-left'></i>"
+         button-next="<i class='fa fa-arrow-right'></i>">
+          <div class="input-group">
+              <input class="form-control" placeholder="Choose a date" ng-model="$ctrl.fromDate"/>
+              <span class="input-group-addon" style="cursor: pointer">
+              <i class="fa fa-lg fa-calendar"></i>
+              </span>
+          </div>
+        </datepicker>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <datepicker date-format="dd-MM-yyyy" selector="form-control" button-prev="<i class='fa fa-arrow-left'></i>"
+         button-next="<i class='fa fa-arrow-right'></i>">
+          <div class="input-group">
+              <input class="form-control" placeholder="Choose a date" ng-model="$ctrl.toDate"/>
+              <span class="input-group-addon" style="cursor: pointer">
+              <i class="fa fa-lg fa-calendar"></i>
+              </span>
+          </div>
+        </datepicker>
+      </div>
+    </div>
+
+
+    <!-- Checking -->
+    <div class="dropdown">
+    <a  class="dropdown-toggle" id="dropdown1" role="button" data-toggle="dropdown" data-target="#" href="#">Click here to show calendar</a>
+    <ul class="dropdown-menu" role="menu">
+        <datetimepicker data-ng-model="data.dateDropDownLink" data-datetimepicker-config="{ dropdownSelector: '#dropdown1' }"/>
+    </ul>
+</div>
+
+<div class="dropdown">
+    <a class="dropdown-toggle" id="dropdown" role="button" data-toggle="dropdown" data-target="#" href="#">
+      <div class="input-group">
+        <input type="text" id="date" name="date" class="form-control" data-ng-model="data.date">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+      </div>
+    </a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+      <datetimepicker   data-ng-model="data.date"
+                        data-datetimepicker-config="{ dropdownSelector: '#dropdown' }"></datetimepicker>
+    </ul>
+  </div>
+    <!-- closing checking -->
+    <button type="button" class="btn btn-primary" name="button" ng-click="$ctrl.apply()">APPLY</button>
+
+  </div>
+  <div ng-switch-when="loss">
+    Loss
+  </div>
+  <div ng-switch-when="sick">
+    Sick
+  </div>
+</div>

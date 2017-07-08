@@ -1,0 +1,82 @@
+<!-- <div>
+  <h1>{{ $ctrl.name }}</h1>
+</div>
+ -->
+
+
+
+
+<div class="row m-b-lg m-t-lg">
+	<div class="col-md-6">
+		<div class="profile-image">
+		<img src="img/a4.jpg" class="img-circle circle-border m-b-md" alt="profile">
+		</div>
+		<div class="profile-info">
+			<div class="">
+				<div>
+					<h2 class="no-margins">
+						User Name
+					</h2>
+					<h4>B level Employee</h4>
+					<small>
+						There are many variations of passages of Lorem Ipsum available, but the majority
+						have suffered alteration in some form Ipsum available.
+					</small>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3">
+	<small>Sales in last 24h</small>
+	<h2 class="no-margins">206 480</h2>
+	<div id="sparkline1"><canvas width="237" height="50" style="display: inline-block; width: 237px; height: 50px; vertical-align: top;"></canvas></div>
+	</div>
+</div>
+
+
+
+<div class="row wrapper border-bottom white-bg page-heading">
+	<div class="col-lg-10">
+		<div class="row m-t-sm">
+			<div class="col-md-2" ng-click="$ctrl.tab = 'projects'">
+				<button type="button" class="btn btn-default" style="width:100%;border:0px;"><strong>Projects</strong></button>
+			</div>
+			<div class="col-md-2" ng-click="$ctrl.tab = 'comments'" style="margin-left:-2em;">
+				<button type="button" class="btn btn-default" style="width:100%;border:0px;"><strong>Comments</strong></button>
+			</div>
+			<div class="col-md-2" ng-click="$ctrl.tab = 'tags'" style="margin-left:-2em;">
+				<button type="button" class="btn btn-default" style="width:100%;border:0px;"><strong>Tags</strong></button>
+			</div>
+			<div class="col-md-2" ng-click="$ctrl.tab = 'followers'" style="margin-left:-2em;">
+				<button type="button" class="btn btn-default" style="width:100%;border:0px;"><strong>Followers</strong></button>
+			</div>
+			<div class="col-md-2" ng-click="$ctrl.tab = 'article'" style="margin-left:-2em;">
+				<button type="button" class="btn btn-default" style="width:100%;border:0px;"><strong>Article</strong></button>
+			</div>
+			<div class="col-md-2" ng-click="$ctrl.tab = 'friends'" style="margin-left:-2em;">
+				<button type="button" class="btn btn-default" style="width:100%;border:0px;"><strong>Friends</strong></button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div ng-init="$ctrl.tab = 'projects'" ng-switch="$ctrl.tab">
+	<div ng-switch-when="projects">
+		Projects
+	</div>
+	<div ng-switch-when="comments">
+		Comments
+	</div>
+	<div ng-switch-when="tags">
+		Tags
+	</div>
+	<div ng-switch-when="followers">
+		Followers
+	</div>
+	<div ng-switch-when="article">
+		Article
+	</div>
+	<div ng-switch-when="friends">
+		Friends
+	</div>
+</div>
